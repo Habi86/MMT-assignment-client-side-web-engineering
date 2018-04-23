@@ -1,0 +1,68 @@
+[
+  {
+    "id": "5ad4def4fae9404155a6f892",
+    "isActive": false,
+    "age": 27,
+    "name": {
+      "first": "Thomas",
+      "last": "Pugh"
+    },
+    "company": "EARWAX",
+    "email": "thomas.pugh@earwax.biz"
+  },
+  {
+    "id": "5ad4def4773f6a9d48aaff35",
+    "isActive": false,
+    "age": 37,
+    "name": {
+      "first": "Rodgers",
+      "last": "Matthews"
+    },
+    "company": "ZIGGLES",
+    "email": "rodgers.matthews@ziggles.biz"
+  },
+  {
+    "id": "5ad4def49eb7984c34b705ff",
+    "isActive": false,
+    "age": 39,
+    "name": {
+      "first": "Maggie",
+      "last": "Garner"
+    },
+    "company": "ULTRASURE",
+    "email": "maggie.garner@ultrasure.name"
+  },
+  {
+    "id": "5ad4def48441b782a35a9a84",
+    "isActive": true,
+    "age": 40,
+    "name": {
+      "first": "Dolores",
+      "last": "Clayton"
+    },
+    "company": "FREAKIN",
+    "email": "dolores.clayton@freakin.tv"
+  },
+  {
+    "id": "5ad4def45752bcacfadea50e",
+    "isActive": true,
+    "age": 23,
+    "name": {
+      "first": "Noel",
+      "last": "Weiss"
+    },
+    "company": "BITTOR",
+    "email": "noel.weiss@bittor.io"
+  },
+  {
+    "id": "5ad4def4d3c51c51299d00b3",
+    "isActive": true,
+    "age": 35,
+    "name": {
+      "first": "Rowe",
+      "last": "Roy"
+    },
+    "company": "PAPRIKUT",
+    "email": "rowe.roy@paprikut.me"
+  }
+]
