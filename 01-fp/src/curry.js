@@ -7,34 +7,23 @@
  * - `curry` is a pure function!
  * - Has auto currying after initial call
  */
+// http://sunjay.ca/2016/08/13/es6-currying
+export function curry(f, ...args) {
+  if (f.length === args.length) {
+    if (args.length === 0) return f;
+    else return f(...args);
+  } else {
+    return (...next) => curry(f, ...args, ...next);
+  }
+}
 
-export function curry(fn) { //Source: https://medium.com/@jschapir/today-i-learned-curry-implementation-with-es6-35bb2229e230
-    let arity = fn.length; //(2) number of arguments fn expects
-    return (...args) => { // (3)
-      let firstArgs = args.length; // (4)
-
-      if (firstArgs >= arity) { //correct number of arguments 
-        return fn(...args); // (5)
-
-      } else {
-        return (...secondArgs) => { // (6)
-           return fn(...[...args, ...secondArgs]); // (7)
-        }
-      }
-    }
- }
-
-
-
-// // Tiny, recursive autocurry
-// const curry = (
-//     f, arr = [],
-//     length = f.length
-//   ) => (...args) => (
-//     a => a.length === length ?
-//       f(...a) :
-//       curry(f, a)
-//   )([...arr, ...args]);
-  
-//   export default curry;
-  
+//Source: https://medium.com/@jschapir/today-i-learned-curry-implementation-with-es6-35bb2229e230
+// export function curry(fn, ...args) { 
+//   let arity = fn.length; //(2) number of arguments fn expects
+//   return (...args) => { // (3)
+//     let firstArgs = args.length; // (4)
+//     if (firstArgs >= arity) { //correct number of arguments 
+//       return fn(...args); // (5)
+//     } 
+//   }
+// }
