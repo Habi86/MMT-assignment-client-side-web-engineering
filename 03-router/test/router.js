@@ -6,12 +6,12 @@ const BASE_URL = "https://example.org";
 describe("03-router", () => {
   describe("config", () => {
     it("should create and start router with no routes", () => {
-      const { dom, window } = createWindow({
+      const { dom, window } = createWindow({ //mit CreateWindow erstelle ich Browserumgebung - bekomme Window + DOM returnt
         url: `${BASE_URL}/`
       });
 
       const router = createRouter();
-      router({ window });
+      router({ window }); // im Browser NICHT notwendig -> nur für unsere Tests notwendig weil kein Browser
 
       changeLocation(dom, BASE_URL);
       router.error.should.be.an.Error();
@@ -26,7 +26,7 @@ describe("03-router", () => {
       router("/", () => {});
       router({ window });
 
-      router.current.should.eql("/");
+      router.current.should.eql("/"); // show funktion muss immer gleich "/" setzen weil ... xD?
     });
   });
 
