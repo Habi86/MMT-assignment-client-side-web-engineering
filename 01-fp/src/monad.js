@@ -21,3 +21,6 @@
  */
 export function d() {
 }
+
+// https://importantshock.wordpress.com/2009/01/18/jquery-is-a-monad/
+// https://www.youtube.com/watch?v=b0EF0VTs9Dc
