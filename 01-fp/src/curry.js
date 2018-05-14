@@ -8,12 +8,12 @@
  * - Has auto currying after initial call
  */
 // http://sunjay.ca/2016/08/13/es6-currying
-export function curry(f, ...args) {
-  if (f.length === args.length) {
+export function curry(f, length = f.length, ...args) {
+  if (length === args.length) {
     if (args.length === 0) return f;
     else return f(...args);
   } else {
-    return (...next) => curry(f, ...args, ...next);
+    return (...next) => curry(f, length, ...args, ...next);
   }
 }
 
