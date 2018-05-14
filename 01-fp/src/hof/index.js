@@ -24,6 +24,8 @@ export function pow(x, y) {
  * - Provides a primer for complex fields
  * - Throws an error if arguments are invalid
  */
-export function sortBy(type, p = x => x) {  /* Alex Lösung */
+export function sortBy(type, p = x => x) {  /* schöne kurze Lösung von Alex */
     return (a, b) => p(a[type]) > p(b[type]);
 }
+
+// TODO Lösung im Buch nochmal:
