@@ -46,7 +46,7 @@ describe("02-view", () => {
   });
 
   describe("Performance: Update nested template", () => {
-    it.skip("should update n times: n = 1000000", () => {
+    it("should update n times: n = 1000000", () => {
       const template = "<h1><small>{{title}}</small></h1>";
 
       const tpl = build(template);
