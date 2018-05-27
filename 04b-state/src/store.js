@@ -34,9 +34,20 @@ export function createStore(reducer, initialState) {
     };
     
     const  dispatch = (action) => {
-        // if (action) {
-        //     throw new Error('Reducers may not dispatch actions.')
-        // }   
+        if (!isPlainObject(action)) {
+            throw new Error(
+                'Actions must be plain objects. ' +
+                'Use custom middleware for async actions.'
+            )
+        } else if (typeof action.type === 'undefined') {
+            throw new Error(
+                'Actions may not have an undefined "type" property. ' +
+                'Have you misspelled a constant?'
+            )
+        } else if (action.type === false || action.type === 0 || action.type === null || action.type === '') {
+			return new Error('Action type is wrong');
+        }
+        
         store.state = reducer(store.state, action);
         store.listeners.forEach(listener => listener());
     };
