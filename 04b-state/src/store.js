@@ -30,7 +30,19 @@ export function createStore(reducer, initialState) {
     const getState = () => store.state;
     
     const subscribe = (listener) => {
-      store.listeners.push(listener);
+        let isSubscribed = true;
+
+        store.listeners.push(listener);
+
+        return function unsubscribe() {
+            if (!isSubscribed) {
+                return
+              }
+        
+            isSubscribed = false;
+            const index = store.listeners.indexOf(listener);
+            store.listeners.splice(index, 1);
+        }
     };
     
     const  dispatch = (action) => {
